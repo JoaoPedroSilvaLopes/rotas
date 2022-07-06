@@ -1,0 +1,38 @@
+:root {
+  --header-height: 3.5rem;
+  --nav-width: 68px;
+
+  /* ======= CORES ========= */
+  --corPrimaria: #7ec8da;
+  --corSecundaria: #292929;
+
+  /* ======= FONTE E TIPOGRAFIA ====== */
+  --body-font: 'Poppins', serif;
+  --normal-font-size: 1rem;
+
+  /* ======= Z-INDEX ======= */
+  --z-fixed: 100;
+}
+
+/* ======== RESETS  NO CSS ========= */
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  margin: 3rem 0 0 0;
+  padding: 0 1rem;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  transition: 0.5s;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    margin: calc(var(--header-height) + 1rem) 0 0 0;
+    padding-left: calc(var(--nav-width) + 2rem);
+  }
+}

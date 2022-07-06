@@ -1,0 +1,40 @@
+/* ======== HEADER ============= */
+.header, .moveLeft {
+    width: 100%;
+    height: var(--header-height);
+  
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    background-color: var(--corSecundaria);
+    z-index: var(--z-fixed);
+    transition: 0.5s;
+}
+  
+.moveLeft {
+    padding: 0 1rem;
+}
+  
+.menuHeader {
+    color: white;
+    cursor: pointer;
+}
+
+.menuHeader:hover {
+    color: var(--corPrimaria);
+}
+
+@media screen and (min-width: 768px) {
+    .header, .moveLeft {
+        height: calc(var(--header-height) + 1rem);
+        padding: 0 2rem 0 calc(var(--nav-width) + 2rem);
+    }
+
+    .moveLeft {
+        padding-left: calc(var(--nav-width) + 188px);
+    }
+}

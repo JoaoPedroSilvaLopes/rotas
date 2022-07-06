@@ -1,0 +1,102 @@
+.menu {
+    color: white;
+    cursor: pointer;
+}
+  
+.menu:hover {
+    color: var(--corSecundaria);
+}
+  
+/* ========== NAVBAR ============ */
+  
+.divNavBar, .show {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(var(--nav-width) + 156px);
+    height: 100vh;
+    background-color: var(--corPrimaria);
+    padding: 1rem 1rem 0 0;
+    transition: 0.5s;
+    z-index: var(--z-fixed);
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+  
+.show {
+    left: -30%;
+    width: var(--nav-width);
+}
+  
+/* nav {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+} */
+  
+.navBarLogo, .navBarLink {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    column-gap: 1.4rem;
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    margin-bottom: 2rem;
+}
+  
+.navBarLogoIcone {
+    font-size: 1.25rem;
+    color: white;
+}
+  
+.navBarLogoNome {
+    color: white;
+    font-weight: 700;
+}
+  
+.navBarLink {
+    position: relative;
+    margin-bottom: 1.5rem;
+    transform: 0.3s;
+}
+  
+.navBarLink:hover {
+    color: white;
+}
+  
+.navBarIcone {
+    font-size: 1.25rem;
+}
+  
+a {
+    text-decoration: none;
+}
+  
+.categoriaIcone, .botaoSair {
+    color: white;
+}
+  
+.categoriaIcone:hover {
+    color: var(--corSecundaria);
+}
+  
+.botaoSair:hover {
+    color: red;
+}
+
+@media screen and (min-width: 768px) {
+    .divNavBar, .show {
+        width: var(--nav-width);
+        left: 0;
+    }
+
+    .show {
+        width: calc(var(--nav-width) + 156px);
+        padding: 1rem 1rem 0 0;
+    }
+}
