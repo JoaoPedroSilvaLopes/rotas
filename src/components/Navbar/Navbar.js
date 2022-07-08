@@ -1,33 +1,53 @@
+// CSS
 import './Navbar.css'
 
-import { Link, NavLink } from 'react-router-dom'
+// HOOKS
+import { useRef } from 'react';
 
-import { Icon } from '@iconify/react';
+// COMPONENTES
+import NavBarLink from '../NavBarLink/NavBarLink';
 
-const Navbar = ( { show } ) => {
+const Navbar = ( { showDefault, settarState } ) => {
+  const ref = useRef();
+
+  function useOnClickOutside() {
+    const {innerWidth} = window
+
+    if (innerWidth < 768) {
+      settarState()
+    } 
+  }
+
   const setores = [['Processador', 'bi:cpu'], ['Memória', 'bi:memory'], ['Placa de vídeo', 'bi:gpu-card'], 
   ['Armazenamento', 'bi:device-hdd'], ['Fonte', 'entypo:power-plug'], ['Gabinete', 'bi:pc']]
 
   return (
-    <nav className={ show === false ? "divNavBar" : "show" }>
+    <nav className={ !showDefault ? "divNavBar" : "show" } onClick={useOnClickOutside} ref={ref}>
       <div className="layer">
-        <div className="navBarLogo">
-          <Icon className="menu" icon="fa-solid:layer-group" width="24" height="24"/>
-          <span className="navBarLinkName">CATÁLOGO</span>
-        </div>
-        <div className="navBarList">
-          {setores.map((setor, index) => {
-            return <a href="#" className="navBarLink" key={index}>
-              <Icon className="categoriaIcone" icon={setor[1]} width="24" height="24" />
-              <span className="navBarLinkName">{setor[0]}</span>
-            </a>
-          })}
-        </div>
+        <NavBarLink 
+          rota="/" 
+          classname="navBarLogo" 
+          nomeIcone="fa-solid:layer-group" 
+          texto={"CATÁLOGO"} 
+          key={1}
+        />
+        {setores.map((setor, index) => {
+          return <NavBarLink 
+            rota={`/products/${setor[0].toLowerCase()}`}
+            classname="navBarLink" 
+            nomeIcone={setor[1]} 
+            texto={setor[0]} 
+            key={index}
+          />
+        })}
       </div>
-      <a href="#" className="navBarLink">
-        <Icon className="botaoSair" icon="ri:logout-box-line" width="24" height="24" />
-        <span className="navBarLinkName">Log out</span>
-      </a>
+      <NavBarLink 
+        rota="/"
+        classname="navBarLogout" 
+        nomeIcone="ri:logout-box-line" 
+        texto={"Log out"} 
+        key={2}
+      />
     </nav>
   )
 }
@@ -35,8 +55,8 @@ const Navbar = ( { show } ) => {
 export default Navbar
 
 // <nav>
-    //     <Link to="/">HOME</Link>
-    //     <Link to="/about">SOBRE</Link>
-    //     <NavLink to="/" className={({isActive}) => (isActive ? 'ativo' : 'naoAtivo')}>HOME</NavLink>
-    //     <NavLink to="/about" className={({isActive}) => (isActive ? 'ativo' : 'naoAtivo')}>SOBRE</NavLink>
-    // </nav>
+//     <Link to="/">HOME</Link>
+//     <Link to="/about">SOBRE</Link>
+//     <NavLink to="/" className={({isActive}) => (isActive ? 'ativo' : 'naoAtivo')}>HOME</NavLink>
+//     <NavLink to="/about" className={({isActive}) => (isActive ? 'ativo' : 'naoAtivo')}>SOBRE</NavLink>
+// </nav>

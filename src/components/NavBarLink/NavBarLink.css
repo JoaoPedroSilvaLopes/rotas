@@ -1,0 +1,66 @@
+/* ============= NAVBAR LOGO ==================== */
+
+.navBarLogo, .navBarLink, .navBarLogout {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    column-gap: 1.4rem;
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    margin-bottom: 2rem;
+    color: white;
+    cursor: pointer;
+}
+  
+/* .navBarLogoIcone {
+    font-size: 1.25rem;
+    color: white;
+}
+  
+.navBarLogoNome {
+    color: white;
+    font-weight: 700;
+} */
+
+/* ============ NAVBAR LINK */
+  
+.navBarLink, .navBarLogout {
+    position: relative;
+    margin-bottom: 1.5rem;
+    transform: 0.3s;
+}
+  
+.navBarLink:hover, .navBarLogo:hover {
+    border-left: 0.25rem solid var(--corSecundaria);
+    color: var(--corSecundaria);
+}
+  
+/* .navBarIcone {
+    font-size: 1.25rem;
+} */
+  
+a {
+    text-decoration: none;
+}
+  
+/* .categoriaIcone, .botaoSair {
+    color: white;
+}
+  
+.categoriaIcone:hover {
+    color: var(--corSecundaria);
+} */
+
+/* ================= NAVBAR LOGOUT ================ */
+  
+.navBarLogout:hover {
+    color: red;
+}
+
+/* .menu, .navBarLinkName {
+    color: white;
+    cursor: pointer;
+}
+  
+.menu:hover, .navBarLinkName:hover {
+    color: var(--corSecundaria);
+} */

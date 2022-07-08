@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom"
 
 const Info = () => {
-  const { id } = useParams()
+  const { modelo } = useParams()
 
   return (
-    <div>Mais informações sobre o produto: {id}</div>
+    <div>Mais informações sobre o produto: {modelo}</div>
   )
 }
 
