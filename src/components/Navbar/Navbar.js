@@ -1,28 +1,16 @@
 // CSS
 import './Navbar.css'
 
-// HOOKS
-import { useRef } from 'react';
-
 // COMPONENTES
 import NavBarLink from '../NavBarLink/NavBarLink';
 
-const Navbar = ( { showDefault, settarState } ) => {
-  const ref = useRef();
-
-  function useOnClickOutside() {
-    const {innerWidth} = window
-
-    if (innerWidth < 768) {
-      settarState()
-    } 
-  }
+const Navbar = ( { showDefault, reference } ) => {
 
   const setores = [['Processador', 'bi:cpu'], ['Memória', 'bi:memory'], ['Placa de vídeo', 'bi:gpu-card'], 
   ['Armazenamento', 'bi:device-hdd'], ['Fonte', 'entypo:power-plug'], ['Gabinete', 'bi:pc']]
 
   return (
-    <nav className={ !showDefault ? "divNavBar" : "show" } onClick={useOnClickOutside} ref={ref}>
+    <nav className={ !showDefault ? "divNavBar" : "show" } ref={reference}>
       <div className="layer">
         <NavBarLink 
           rota="/" 
