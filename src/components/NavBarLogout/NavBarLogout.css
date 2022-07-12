@@ -1,0 +1,25 @@
+.navBarLogout {
+  height: calc(var(--header-height) + 1rem);
+  display: grid;
+  grid-template-columns: max-content max-content;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  color: white;
+  cursor: pointer;
+
+  position: relative;
+  transition: 0.3s;
+}
+
+
+.navBarLogout:hover {
+  background-color: var(--corSecundaria);
+  color: red;
+  transition: 0.3s;
+}
+
+.textLogout {
+  font-family: var(--body-font);
+  font-size: calc(var(--normal-font-size) + 8px);
+}

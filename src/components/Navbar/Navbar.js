@@ -3,51 +3,32 @@ import './Navbar.css'
 
 // COMPONENTES
 import NavBarLink from '../NavBarLink/NavBarLink';
+import NavBarLogout from '../NavBarLogout/NavBarLogout';
+import NavBarMenu from '../NavBarMenu/NavBarMenu';
 
 const Navbar = ( { showDefault, reference } ) => {
 
-  const setores = [['Processador', 'bi:cpu'], ["Memoria", 'bi:memory'], ['GPUs', 'bi:gpu-card'], 
-  ['Armazenamento', 'bi:device-hdd'], ['Fonte', 'entypo:power-plug'], ['Gabinete', 'bi:pc']]
+  const setores = [['Processador', 'bi:cpu', ['AMD', 'Intel']], ["Memoria", 'bi:memory', ['Corsair', 'XPG', 'Cruciall', 'G.SKill']], 
+  ['GPUs', 'bi:gpu-card', ['AMD', 'Nvidia']], ['Armazenamento', 'bi:device-hdd', ['Seagate', 'Western Digital', 'Kingston', 'XPG']], 
+  ['Fonte', 'entypo:power-plug', ['XPG', 'Corsair', 'Thermaltake']], ['Gabinete', 'bi:pc', ['Corsair', 'Thermaltake', 'Asus', 'Redragon']]]
 
   return (
     <nav className={ !showDefault ? "divNavBar" : "show" } ref={reference}>
-      <div className="layer">
-        <NavBarLink 
-          rota="/" 
-          activeClassName="navBarLogo"
-          classname="navBarLogo" 
-          nomeIcone="fa-solid:layer-group" 
-          texto={"CATÁLOGO"} 
-          key={1}
-        />
+      <div className='layer'>
+        <NavBarMenu />
         {setores.map((setor, index) => {
           return <NavBarLink 
             rota={`/products/${setor[0].toLowerCase()}`}
-            activeClassName="navBarActive"
-            classname="navBarLink"
             nomeIcone={setor[1]} 
             texto={setor[0]} 
+            marcas={setor[2]}
             key={index}
           />
         })}
       </div>
-      <NavBarLink 
-        rota="/"
-        activeClassName="navBarLogout"
-        classname="navBarLogout" 
-        nomeIcone="ri:logout-box-line" 
-        texto={"Log out"} 
-        key={2}
-      />
+      <NavBarLogout />
     </nav>
   )
 }
 
 export default Navbar
-
-// <nav>
-//     <Link to="/">HOME</Link>
-//     <Link to="/about">SOBRE</Link>
-//     <NavLink to="/" className={({isActive}) => (isActive ? 'ativo' : 'naoAtivo')}>HOME</NavLink>
-//     <NavLink to="/about" className={({isActive}) => (isActive ? 'ativo' : 'naoAtivo')}>SOBRE</NavLink>
-// </nav>
