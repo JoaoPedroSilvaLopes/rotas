@@ -5,10 +5,10 @@ import './NavBarLink.css'
 import { NavLink } from 'react-router-dom'
 import { Icon } from '@iconify/react';
 
-const NavBarLink = ( {rota, classname, nomeIcone, texto} ) => {
+const NavBarLink = ( {rota, activeClassName, classname, nomeIcone, texto} ) => {
   return (
-    <NavLink to={rota} className={classname} >
-        <Icon className="menu" icon={nomeIcone} width="24" height="24"/>
+    <NavLink to={rota} className={({ isActive }) => isActive ? activeClassName : classname}>
+        <Icon className="menu" icon={nomeIcone} width="20" height="20"/>
         <span className="navBarLinkName">{texto}</span>
     </NavLink>
   )

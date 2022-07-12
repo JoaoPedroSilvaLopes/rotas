@@ -1,66 +1,52 @@
 /* ============= NAVBAR LOGO ==================== */
 
-.navBarLogo, .navBarLink, .navBarLogout {
+.navBarLogo, .navBarLink, .navBarLogout, .navBarActive {
+    height: 3rem;
     display: grid;
     grid-template-columns: max-content max-content;
     align-items: center;
-    column-gap: 1.4rem;
+    gap: 1.5rem;
     padding: 0.5rem 0 0.5rem 1.5rem;
-    margin-bottom: 2rem;
     color: white;
     cursor: pointer;
 }
-  
-/* .navBarLogoIcone {
-    font-size: 1.25rem;
-    color: white;
+
+.navBarLogo {
+    height: calc(var(--header-height) + 1rem);
+    margin-bottom: 1rem;
+    border-bottom: 1px solid white;
 }
-  
-.navBarLogoNome {
-    color: white;
-    font-weight: 700;
-} */
+
+.navBarLogout {
+    height: calc(var(--header-height) + 1rem);
+}
 
 /* ============ NAVBAR LINK */
   
-.navBarLink, .navBarLogout {
+.navBarLink, .navBarLogout, .navBarActive {
     position: relative;
-    margin-bottom: 1.5rem;
     transform: 0.3s;
 }
   
-.navBarLink:hover, .navBarLogo:hover {
-    border-left: 0.25rem solid var(--corSecundaria);
-    color: var(--corSecundaria);
+.navBarLink:hover, .navBarActive {
+    border-left: 0.3rem solid white;
+    background-color: var(--corSecundaria);
 }
-  
-/* .navBarIcone {
-    font-size: 1.25rem;
-} */
+
+.navBarLinkName {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    font-weight: 700;
+}
   
 a {
     text-decoration: none;
 }
-  
-/* .categoriaIcone, .botaoSair {
-    color: white;
-}
-  
-.categoriaIcone:hover {
-    color: var(--corSecundaria);
-} */
 
 /* ================= NAVBAR LOGOUT ================ */
   
 .navBarLogout:hover {
+    background-color: var(--corSecundaria);
     color: red;
+    transition: 0.3s;
 }
-
-/* .menu, .navBarLinkName {
-    color: white;
-    cursor: pointer;
-}
-  
-.menu:hover, .navBarLinkName:hover {
-    color: var(--corSecundaria);
-} */

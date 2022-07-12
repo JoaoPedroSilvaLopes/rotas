@@ -6,7 +6,7 @@ import NavBarLink from '../NavBarLink/NavBarLink';
 
 const Navbar = ( { showDefault, reference } ) => {
 
-  const setores = [['Processador', 'bi:cpu'], ['Memória', 'bi:memory'], ['Placa de vídeo', 'bi:gpu-card'], 
+  const setores = [['Processador', 'bi:cpu'], ["Memoria", 'bi:memory'], ['GPUs', 'bi:gpu-card'], 
   ['Armazenamento', 'bi:device-hdd'], ['Fonte', 'entypo:power-plug'], ['Gabinete', 'bi:pc']]
 
   return (
@@ -14,6 +14,7 @@ const Navbar = ( { showDefault, reference } ) => {
       <div className="layer">
         <NavBarLink 
           rota="/" 
+          activeClassName="navBarLogo"
           classname="navBarLogo" 
           nomeIcone="fa-solid:layer-group" 
           texto={"CATÁLOGO"} 
@@ -22,7 +23,8 @@ const Navbar = ( { showDefault, reference } ) => {
         {setores.map((setor, index) => {
           return <NavBarLink 
             rota={`/products/${setor[0].toLowerCase()}`}
-            classname="navBarLink" 
+            activeClassName="navBarActive"
+            classname="navBarLink"
             nomeIcone={setor[1]} 
             texto={setor[0]} 
             key={index}
@@ -31,6 +33,7 @@ const Navbar = ( { showDefault, reference } ) => {
       </div>
       <NavBarLink 
         rota="/"
+        activeClassName="navBarLogout"
         classname="navBarLogout" 
         nomeIcone="ri:logout-box-line" 
         texto={"Log out"} 

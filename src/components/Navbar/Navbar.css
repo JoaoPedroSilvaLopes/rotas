@@ -7,7 +7,7 @@
     width: calc(var(--nav-width) + 156px);
     height: 100vh;
     background-color: var(--corPrimaria);
-    padding: 1rem 1rem 0 0;
+    padding: 0;
     transition: 0.5s;
     z-index: var(--z-fixed);
 
@@ -31,6 +31,6 @@
 
     .show {
         width: calc(var(--nav-width) + 156px);
-        padding: 1rem 1rem 0 0;
+        padding: 0;
     }
 }
